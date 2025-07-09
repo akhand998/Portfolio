@@ -3,10 +3,6 @@
 import { useState, useEffect, useMemo } from 'react'
 import Navbar from '@/app/components/common/Navbar'
 import Hero from '@/app/components/sections/Hero'
-// If the above import fails, try one of the following based on your actual file structure and casing:
-// import Hero from '@/app/components/sections/hero'
-//import Hero from '../../components/sections/Hero'
-// import Hero from '../../components/sections/hero'
 import About from '@/app/components/sections/About'
 import Skills from '@/app/components/sections/Skills'
 import Projects from '@/app/components/sections/Projects'
@@ -17,10 +13,9 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState<string>('home')
   const sections = useMemo(() => ['home', 'about', 'skills', 'projects', 'contact'], [])
 
-  // Scroll listener to update active section
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 100 // Offset for navbar height
+      const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
         const element = document.getElementById(section)
@@ -37,7 +32,7 @@ export default function Home() {
     }
 
     window.addEventListener('scroll', handleScroll)
-    handleScroll() // Call once to set initial state
+    handleScroll()
 
     return () => window.removeEventListener('scroll', handleScroll)
   }, [sections])
