@@ -14,7 +14,7 @@ export default function Projects() {
       description: 'Personal portfolio website showcasing projects and skills with modern animations.',
       technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'TypeScript'],
       image: '/portfolio.png',
-      liveDemo: 'https://alkandpsingh.tech',
+      liveDemo: 'https://akhandpsingh.tech',
       github: 'https://github.com/akhand998/portfolio'
     },
     {
@@ -30,7 +30,7 @@ export default function Projects() {
       description: 'Collaborative issue tracking application with real-time updates and team features.',
       technologies: ['Next.js', 'Express', 'Socket.io', 'PostgreSQL'],
       image: '/issue.png',
-      liveDemo: 'https://issuetrackeralkandpsingh.tech',
+      liveDemo: 'https://issuetracker.akhandpsingh.tech',
       github: 'https://github.com/akhand998/IssueTracker'
     },
     {
