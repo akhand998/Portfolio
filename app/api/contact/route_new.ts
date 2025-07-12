@@ -40,15 +40,6 @@ function sanitizeInput(input: string): string {
 
 export async function POST(request: NextRequest) {
   try {
-    // Debug environment variables
-    console.log('Environment variables check:', {
-      SMTP_HOST: process.env.SMTP_HOST ? 'present' : 'missing',
-      SMTP_PORT: process.env.SMTP_PORT ? 'present' : 'missing',
-      SMTP_USER: process.env.SMTP_USER ? 'present' : 'missing',
-      SMTP_PASS: process.env.SMTP_PASS ? 'present' : 'missing',
-      RECIPIENT_EMAIL: process.env.RECIPIENT_EMAIL ? 'present' : 'missing'
-    })
-
     // Get client IP for rate limiting
     const forwarded = request.headers.get('x-forwarded-for')
     const ip = forwarded ? forwarded.split(',')[0] : request.headers.get('x-real-ip') || 'unknown'
