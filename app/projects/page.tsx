@@ -11,59 +11,40 @@ export default function ProjectsPage() {
   const allProjects = [
     {
       title: 'Portfolio Website',
-      description: 'Personal portfolio website showcasing projects and skills with modern animations. Built with Next.js and optimized for performance.',
+      description: 'Personal portfolio website showcasing projects and skills with modern animations.',
       technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'TypeScript'],
       image: '/portfolio.png',
-      liveDemo: '#',
-      github: '#',
-      category: 'Portfolio'
+      liveDemo: 'https://alkandpsingh.tech',
+      github: 'https://github.com/akhand998/portfolio',
+      category: 'Web Development'
     },
     {
-      title: 'Portfolio Website',
-      description: 'Personal portfolio website showcasing projects and skills with modern animations. Built with Next.js and optimized for performance.',
-      technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'TypeScript'],
-      image: '/placeholder-project-4.jpg',
-      liveDemo: '#',
-      github: '#',
-      category: 'Portfolio'
+      title: 'Wordgame',
+      description: "wordle like 'Guess the word' game built using react in vite",
+      technologies: ['React', 'tailwindcss', 'vite'],
+      image: '/word.png',
+      liveDemo: 'https://wordzzle.vercel.app/',
+      github: 'https://github.com/akhand998/wordgame',
+      category: 'Game Development'
     },
     {
-      title: 'Portfolio Website',
-      description: 'Personal portfolio website showcasing projects and skills with modern animations. Built with Next.js and optimized for performance.',
-      technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'TypeScript'],
-      image: '/placeholder-project-4.jpg',
-      liveDemo: '#',
-      github: '#',
-      category: 'Portfolio'
+      title: 'Issue Tracker',
+      description: 'Collaborative issue tracking application with real-time updates and team features.',
+      technologies: ['Next.js', 'Express', 'Socket.io', 'PostgreSQL'],
+      image: '/issue.png',
+      liveDemo: 'https://issuetrackeralkandpsingh.tech',
+      github: 'https://github.com/akhand998/IssueTracker',
+      category: 'Web Development'
     },
     {
-      title: 'Portfolio Website',
-      description: 'Personal portfolio website showcasing projects and skills with modern animations. Built with Next.js and optimized for performance.',
-      technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'TypeScript'],
-      image: '/placeholder-project-4.jpg',
+      title: 'Podcast',
+      description: 'podcast generating chrome extension.',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'elevenlabs'],
+      image: '/pod.png',
       liveDemo: '#',
-      github: '#',
-      category: 'Portfolio'
-    },
-    {
-      title: 'Portfolio Website',
-      description: 'Personal portfolio website showcasing projects and skills with modern animations. Built with Next.js and optimized for performance.',
-      technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'TypeScript'],
-      image: '/placeholder-project-4.jpg',
-      liveDemo: '#',
-      github: '#',
-      category: 'Portfolio'
-    },
-    {
-      title: 'Portfolio Website',
-      description: 'Personal portfolio website showcasing projects and skills with modern animations. Built with Next.js and optimized for performance.',
-      technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'TypeScript'],
-      image: '/placeholder-project-4.jpg',
-      liveDemo: '#',
-      github: '#',
-      category: 'Portfolio'
-    },
-    
+      github: 'https://github.com/akhand998/Podcast',
+      category: 'Browser Extension'
+    }
   ]
 
   return (
@@ -113,11 +94,12 @@ export default function ProjectsPage() {
                   scale: hoveredIndex === index ? 1.05 : 1,
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
-                className="h-48 relative overflow-hidden"
+                className="h-48 relative overflow-hidden project-card-bg"
                 style={{
                   backgroundImage: `url(${project.image})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
                   backgroundColor: '#1f2937' // fallback color
                 }}
               >

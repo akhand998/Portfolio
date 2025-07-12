@@ -14,32 +14,32 @@ export default function Projects() {
       description: 'Personal portfolio website showcasing projects and skills with modern animations.',
       technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'TypeScript'],
       image: '/portfolio.png',
-      liveDemo: '#',
-      github: '#'
+      liveDemo: 'https://alkandpsingh.tech',
+      github: 'https://github.com/akhand998/portfolio'
     },
     {
-      title: 'E-Commerce Platform',
-      description: 'Modern e-commerce platform with shopping cart, payment integration, and admin dashboard.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      image: '/portfolio.png',
-      liveDemo: '#',
-      github: '#'
+      title: 'Wordgame',
+      description: "wordle like 'Guess the word' game built using react in vite",
+      technologies: ['React',  'tailwindcss', 'vite'],
+      image: '/word.png',
+      liveDemo: 'https://wordzzle.vercel.app/',
+      github: 'https://github.com/akhand998/wordgame'
     },
     {
-      title: 'Task Management App',
-      description: 'Collaborative task management application with real-time updates and team features.',
-      technologies: ['Vue.js', 'Express', 'Socket.io', 'PostgreSQL'],
-      image: '/portfolio.png',
-      liveDemo: '#',
-      github: '#'
+      title: 'Issue Tracker',
+      description: 'Collaborative issue tracking application with real-time updates and team features.',
+      technologies: ['Next.js', 'Express', 'Socket.io', 'PostgreSQL'],
+      image: '/issue.png',
+      liveDemo: 'https://issuetrackeralkandpsingh.tech',
+      github: 'https://github.com/akhand998/IssueTracker'
     },
     {
-      title: 'Weather Dashboard',
-      description: 'Interactive weather dashboard with location-based forecasts and beautiful visualizations.',
-      technologies: ['React', 'Chart.js', 'Weather API', 'CSS'],
-      image: '/portfolio.png',
+      title: 'Podcast',
+      description: 'podcast generating chrome extension.',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'elevenlabs'],
+      image: '/pod.png',
       liveDemo: '#',
-      github: '#'
+      github: 'https://github.com/akhand998/Podcast'
     }
   ]
 
