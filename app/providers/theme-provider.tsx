@@ -25,7 +25,6 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState)
 
 export function ThemeProvider({
   children,
-  defaultTheme = 'dark',
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>('dark') // Always dark
 

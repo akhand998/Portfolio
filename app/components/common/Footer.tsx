@@ -1,13 +1,13 @@
 'use client'
 
-import { Github, Linkedin, Twitter, Instagram, Globe } from 'lucide-react'
+import { SiGithub, SiLinkedin,SiX, SiInstagram } from "react-icons/si"
 
 export default function Footer() {
   const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/akhand998', icon: Github },
-    { name: 'LinkedIn', url: 'https://linkedin.com/in/akhand-pratap-singh-9005425b/', icon: Linkedin },
-    { name: 'Twitter', url: 'https://twitter.com', icon: Twitter },
-    { name: 'Instagram', url: 'https://instagram.com', icon: Instagram }
+    { name: 'GitHub', url: 'https://github.com/akhand998', icon: SiGithub },
+    { name: 'LinkedIn', url: 'https://linkedin.com/in/akhand-pratap-singh-9005425b/', icon: SiLinkedin },
+    { name: 'Twitter', url: 'https://twitter.com', icon: SiX },
+    { name: 'Instagram', url: 'https://instagram.com', icon: SiInstagram }
   ]
 
   const currentYear = new Date().getFullYear()

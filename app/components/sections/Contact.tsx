@@ -4,8 +4,14 @@ import { useActionState, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin } from 'lucide-react'
 
+interface ContactFormState {
+  success: boolean
+  message: string
+  timestamp: number
+}
+
 // Server action for form submission
-async function submitContactForm(prevState: any, formData: FormData) {
+async function submitContactForm(prevState: ContactFormState, formData: FormData) {
   try {
     const name = formData.get('name') as string
     const email = formData.get('email') as string
