@@ -11,25 +11,26 @@ export default function About() {
   ]
 
   return (
-    <section id="about" className="py-20 bg-secondary/30">
-      <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            About Me
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I&apos;m a passionate full-stack developer with expertise in modern web technologies. 
-            I love creating seamless user experiences and solving complex problems through code.
-          </p>
-        </motion.div>
+    <section id="about" className="min-h-[calc(100vh-6rem)] flex items-center py-20 bg-secondary/30">
+      <div className="container mx-auto px-6 w-full">
+        <div className="flex flex-col justify-center h-full">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+              About Me
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              I&apos;m a passionate full-stack developer with expertise in modern web technologies. 
+              I love creating seamless user experiences and solving complex problems through code.
+            </p>
+          </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -71,6 +72,7 @@ export default function About() {
               </motion.div>
             ))}
           </motion.div>
+        </div>
         </div>
       </div>
     </section>

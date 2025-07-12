@@ -27,29 +27,28 @@ export function ThemeProvider({
   children,
   defaultTheme = 'dark',
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(defaultTheme)
+  const [theme, setTheme] = useState<Theme>('dark') // Always dark
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') as Theme
-    if (savedTheme) {
-      setTheme(savedTheme)
-    }
+    // Force dark mode, ignore saved theme
+    setTheme('dark')
   }, [])
 
   useEffect(() => {
     const root = window.document.documentElement
     root.classList.remove('light', 'dark')
-    root.classList.add(theme)
-    localStorage.setItem('theme', theme)
+    root.classList.add('dark') // Always add dark class
+    localStorage.setItem('theme', 'dark') // Always save as dark
   }, [theme])
 
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
+    // Disable theme toggling - always stay dark
+    setTheme('dark')
   }
 
   const value = {
-    theme,
-    setTheme,
+    theme: 'dark' as Theme, // Always return dark
+    setTheme: () => {}, // Disable theme setting
     toggleTheme,
   }
 

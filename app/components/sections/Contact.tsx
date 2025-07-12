@@ -1,9 +1,8 @@
 'use client'
 
-import { useActionState } from 'react'
+import { useActionState, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin } from 'lucide-react'
-import emailjs from '@emailjs/browser'
 
 // Server action for form submission
 async function submitContactForm(prevState: any, formData: FormData) {
@@ -12,32 +11,24 @@ async function submitContactForm(prevState: any, formData: FormData) {
     const email = formData.get('email') as string
     const message = formData.get('message') as string
     
-    // EmailJS configuration - You'll need to replace these with your actual EmailJS credentials
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'your_service_id'
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'your_template_id'
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'your_public_key'
+    // Send to our secure API endpoint
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        message,
+      }),
+    })
     
-    // Initialize EmailJS
-    emailjs.init(publicKey)
-    
-    // Send email using EmailJS
-    const result = await emailjs.send(
-      serviceId,
-      templateId,
-      {
-        from_name: name,
-        from_email: email,
-        message: message,
-        to_name: 'Akhand',
-        reply_to: email,
-      }
-    )
-    
-    console.log('Email sent successfully:', result)
+    const result = await response.json()
     
     return {
-      success: true,
-      message: 'Thank you! Your message has been sent successfully. I will get back to you soon.',
+      success: result.success,
+      message: result.message,
       timestamp: Date.now()
     }
   } catch (error) {
@@ -58,12 +49,26 @@ export default function Contact() {
     timestamp: 0
   })
 
+  const [showMessage, setShowMessage] = useState(false)
+
+  // Show message when state changes and auto-hide after 5 seconds
+  useEffect(() => {
+    if (state.message && state.timestamp) {
+      setShowMessage(true)
+      const timer = setTimeout(() => {
+        setShowMessage(false)
+      }, 5000)
+
+      return () => clearTimeout(timer)
+    }
+  }, [state.message, state.timestamp])
+
   const contactInfo = [
     {
       icon: Mail,
       label: 'Email',
-      value: 'amanpratapsingh998@gmail.com',
-      link: 'mailto:amanpratapsingh998@gmail.com'
+      value: 'akhnd.p.sngh@gmail.com',
+      link: 'mailto:akhnd.p.sngh@gmail.com'
     },
     {
       icon: Phone,
@@ -80,8 +85,8 @@ export default function Contact() {
   ]
 
   return (
-    <section id="contact" className="py-20">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="min-h-[calc(100vh-6rem)] flex items-center py-20">
+      <div className="container mx-auto px-6 w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -137,17 +142,29 @@ export default function Contact() {
             className="space-y-6"
           >
             {/* Success/Error Message */}
-            {state.message && (
+            {state.message && showMessage && (
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
                 className={`p-4 border rounded-lg ${
                   state.success 
                     ? 'bg-green-500/20 border-green-500/30 text-green-400' 
                     : 'bg-red-500/20 border-red-500/30 text-red-400'
                 }`}
               >
-                {state.message}
+                <div className="flex items-center justify-between">
+                  <span>{state.message}</span>
+                  <button
+                    onClick={() => setShowMessage(false)}
+                    className="ml-4 text-current opacity-70 hover:opacity-100 transition-opacity"
+                    aria-label="Close message"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
               </motion.div>
             )}
 

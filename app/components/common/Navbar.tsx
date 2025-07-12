@@ -15,6 +15,13 @@ export default function Navbar({ sections, activeSection, scrollToSection }: Nav
   const { theme, toggleTheme } = useTheme()
 
   const handleSectionClick = (sectionId: string) => {
+    if (sectionId === 'resume') {
+      // Open resume in new tab - replace with your actual resume URL
+      window.open('/resume.pdf', '_blank')
+      setIsMenuOpen(false)
+      return
+    }
+    
     scrollToSection(sectionId)
     setIsMenuOpen(false)
   }

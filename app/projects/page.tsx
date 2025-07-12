@@ -13,7 +13,7 @@ export default function ProjectsPage() {
       title: 'Portfolio Website',
       description: 'Personal portfolio website showcasing projects and skills with modern animations. Built with Next.js and optimized for performance.',
       technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'TypeScript'],
-      image: '/placeholder-project-4.jpg',
+      image: '/portfolio.png',
       liveDemo: '#',
       github: '#',
       category: 'Portfolio'
@@ -113,21 +113,36 @@ export default function ProjectsPage() {
                   scale: hoveredIndex === index ? 1.05 : 1,
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
-                className="h-48 bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center relative overflow-hidden"
+                className="h-48 relative overflow-hidden"
+                style={{
+                  backgroundImage: `url(${project.image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundColor: '#1f2937' // fallback color
+                }}
               >
-                <motion.div 
-                  animate={{ 
-                    scale: hoveredIndex === index ? 1.1 : 1,
-                    rotate: hoveredIndex === index ? 5 : 0,
-                  }}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                >
-                  <Globe className="w-16 h-16 text-primary opacity-50" />
-                </motion.div>
-                <div className="absolute top-4 right-4">
-                  <span className="px-2 py-1 bg-primary/20 text-primary text-xs rounded-full">
+                {/* Overlay for better text readability */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/20" />
+                
+                {/* Category tag */}
+                <div className="absolute top-4 right-4 z-10">
+                  <span className="px-3 py-1 bg-background/90 text-foreground text-xs rounded-full backdrop-blur-sm border border-border">
                     {project.category}
                   </span>
+                </div>
+                
+                {/* Fallback icon when image doesn't load */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <motion.div 
+                    animate={{ 
+                      scale: hoveredIndex === index ? 1.1 : 1,
+                      rotate: hoveredIndex === index ? 5 : 0,
+                    }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="opacity-30"
+                  >
+                    <Globe className="w-16 h-16 text-primary" />
+                  </motion.div>
                 </div>
               </motion.div>
               

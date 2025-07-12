@@ -11,11 +11,12 @@ import Footer from '@/app/components/common/Footer'
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<string>('home')
-  const sections = useMemo(() => ['home', 'about', 'skills', 'projects', 'contact'], [])
+  const sections = useMemo(() => ['home', 'about', 'skills', 'projects', 'contact', 'resume'], [])
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 100
+      const navbarHeight = 80
+      const scrollPosition = window.scrollY + navbarHeight + 50 // Add some buffer
 
       for (const section of sections) {
         const element = document.getElementById(section)
@@ -40,7 +41,12 @@ export default function Home() {
   const scrollToSection = (sectionId: string): void => {
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      const navbarHeight = 80 // More precise navbar height
+      const offsetTop = element.offsetTop - navbarHeight
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      })
     }
     setActiveSection(sectionId)
   }
