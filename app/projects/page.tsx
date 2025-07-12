@@ -32,7 +32,7 @@ export default function ProjectsPage() {
       description: 'Collaborative issue tracking application with real-time updates and team features.',
       technologies: ['Next.js', 'Express', 'Socket.io', 'PostgreSQL'],
       image: '/issue.png',
-      liveDemo: 'https://issuetrackeralkandpsingh.tech',
+      liveDemo: 'https://issuetracker.akhandpsingh.tech',
       github: 'https://github.com/akhand998/IssueTracker',
       category: 'Web Development'
     },
