@@ -52,6 +52,8 @@ html {
 html, body {
   background-color: #0a0a0a !important;
   color: #ffffff !important;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* Ensure dark class is always applied */
@@ -191,4 +193,53 @@ h1, h2, h3, h4, h5, h6, p, span, div {
 /* Ensure project card backgrounds work in dark mode */
 .dark [style*="background-image"] {
   background-color: transparent !important;
+}
+
+/* Mobile viewport and overflow fixes */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure container doesn't exceed viewport */
+.container {
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Very small mobile screens (below 375px) */
+@media (max-width: 374px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  /* Reduce font sizes for very small screens */
+  h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.3;
+  }
+  
+  p {
+    font-size: 0.875rem !important;
+    line-height: 1.4;
+  }
+  
+  /* Ensure buttons don't overflow */
+  button {
+    font-size: 0.875rem !important;
+    padding: 0.625rem 1.25rem !important;
+  }
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+  button, a[href] {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

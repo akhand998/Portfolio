@@ -9,29 +9,29 @@ interface HeroProps {
 
 export default function Hero({ scrollToSection }: HeroProps) {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-16">
-      <div className="container mx-auto px-6 text-center">
+    <section id="home" className="min-h-screen flex items-center justify-center pt-12 sm:pt-16">
+      <div className="container mx-auto px-4 sm:px-6 text-center max-w-full overflow-hidden">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto w-full"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="mb-8"
+            className="mb-4 sm:mb-6"
           >
-            <div className="w-48 h-48 md:w-56 md:h-56 mx-auto rounded-full overflow-hidden border-4 border-primary/20 hover:border-primary/40 transition-colors duration-300 relative bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
-              <span className="text-5xl md:text-6xl font-bold text-foreground">
+            <div className="w-40 xs:w-48 sm:w-56 md:w-64 lg:w-72 h-40 xs:h-48 sm:h-56 md:h-64 lg:h-72 mx-auto rounded-full overflow-hidden border-4 border-primary/20 hover:border-primary/40 transition-colors duration-300 relative bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
+              <span className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground">
                 AK
               </span>
               <Image
                 src="/WhatsApp Image 2025-06-11 at 12.14.53 PM.jpeg"
                 alt="Akhand - Full Stack Developer"
-                width={224}
-                height={224}
+                width={288}
+                height={288}
                 className="w-full h-full object-cover absolute inset-0"
                 priority
               />
@@ -42,10 +42,10 @@ export default function Hero({ scrollToSection }: HeroProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-bold mb-6"
+            className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2 sm:px-0"
           >
             Hi, I&apos;m{' '}
-            <span className="text-primary">
+            <span className="text-primary block xs:inline">
               Akhand
             </span>
           </motion.h1>
@@ -54,7 +54,7 @@ export default function Hero({ scrollToSection }: HeroProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed"
+            className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 sm:mb-8 leading-relaxed px-2 sm:px-0 max-w-3xl mx-auto"
           >
             A passionate full-stack developer crafting beautiful, functional web experiences
             with modern technologies and creative solutions.
@@ -64,17 +64,17 @@ export default function Hero({ scrollToSection }: HeroProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col gap-3 sm:gap-4 justify-center px-2 sm:px-0 sm:flex-row max-w-md sm:max-w-none mx-auto"
           >
             <button
               onClick={() => scrollToSection('projects')}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 cursor-pointer"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 sm:px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 cursor-pointer text-sm sm:text-base"
             >
               View My Work
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="border-2 border-border text-muted-foreground hover:bg-muted hover:text-foreground px-8 py-3 rounded-full font-semibold transition-all duration-300 cursor-pointer"
+              className="border-2 border-border text-muted-foreground hover:bg-muted hover:text-foreground px-6 sm:px-8 py-3 rounded-full font-semibold transition-all duration-300 cursor-pointer text-sm sm:text-base"
             >
               Get In Touch
             </button>

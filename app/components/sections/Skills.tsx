@@ -62,42 +62,42 @@ export default function Skills() {
   ]
 
   return (
-    <section id="skills" className="min-h-[calc(100vh-6rem)] flex items-center py-12 md:py-20">
-      <div className="container mx-auto px-4 md:px-6 w-full">
+    <section id="skills" className="min-h-[calc(100vh-6rem)] flex items-center py-12 sm:py-16 lg:py-20">
+      <div className="container mx-auto px-4 sm:px-6 w-full">
         <div className="flex flex-col justify-center h-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-8 md:mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-foreground">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-foreground">
               Skills & Technologies
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4 md:px-0">
+            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto px-4 sm:px-0">
               Here are the technologies and tools I work with to bring ideas to life
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-          {skillCategories.map((category, categoryIndex) => (
-            <motion.div
-              key={categoryIndex}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
-              className="bg-card border border-border rounded-xl p-4 md:p-4 hover:border-primary/50 transition-colors"
-            >
-              <div className="text-center mb-4">
-                <div className="mb-2">
-                  <category.icon className="w-6 h-6 md:w-7 md:h-7 text-primary mx-auto" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {skillCategories.map((category, categoryIndex) => (
+              <motion.div
+                key={categoryIndex}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
+                className="bg-card border border-border rounded-xl p-4 sm:p-6 hover:border-primary/50 transition-colors"
+              >
+                <div className="text-center mb-4 sm:mb-6">
+                  <div className="mb-2">
+                    <category.icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary mx-auto" />
+                  </div>
+                  <h3 className="text-base sm:text-lg font-bold text-foreground">{category.title}</h3>
                 </div>
-                <h3 className="text-base md:text-lg font-bold text-foreground">{category.title}</h3>
-              </div>
-              
-              <div className="flex flex-wrap justify-center gap-2 md:gap-3">
+                
+                <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skillIndex}

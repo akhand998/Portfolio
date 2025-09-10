@@ -52,7 +52,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-300 overflow-x-hidden max-w-full">
       <Navbar
         sections={sections}
         activeSection={activeSection}

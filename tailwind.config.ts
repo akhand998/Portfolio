@@ -49,6 +49,10 @@ const config: Config = {
           foreground: "hsl(var(--destructive-foreground))",
         },
       },
+      screens: {
+        'xs': '375px',
+        // ...existing screens...
+      },
     },
   },
   plugins: [],
