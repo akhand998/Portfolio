@@ -10,12 +10,12 @@ export default function Projects() {
 
   const projects = [
     {
-      title: 'Portfolio Website',
-      description: 'Personal portfolio website showcasing projects and skills with modern animations.',
-      technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'TypeScript'],
-      image: '/portfolio.png',
-      liveDemo: 'https://akhandpsingh.tech',
-      github: 'https://github.com/akhand998/portfolio'
+      title: 'Personalised Dashboard',
+      description: 'A beautiful, personalized dashboard with secure NextAuth authentication, news feed, movie recommendations, dark mode, and favorites system with drag-and-drop reordering.',
+      technologies: ['Next.js 14', 'NextAuth.js', 'Redux Toolkit', 'Express.js', 'MongoDB', 'JWT', 'Tailwind CSS', 'TypeScript'],
+      image: '/personaldashboard.png',
+      liveDemo: 'https://personalised-dashboard.vercel.app/',
+      github: 'https://github.com/akhand998/Personalised-Dashboard'
     },
     {
       title: 'Wordgame',
